@@ -22,7 +22,7 @@ class Config:
         self.secondary_mint = None
         self.secondary_mint_symbol = None
         self.price_update_seconds = None
-        self.trading_interval_minutes = None
+        self.trading_interval = None
         self.slippage = None  # BPS
         self.computeUnitPriceMicroLamports = None
         self.load_config()
@@ -36,7 +36,7 @@ class Config:
         self.secondary_mint = os.getenv("SECONDARY_MINT", "")
         self.secondary_mint_symbol = os.getenv("SECONDARY_MINT_SYMBOL", "UNKNOWN")
         self.price_update_seconds = int(os.getenv("PRICE_UPDATE_SECONDS") or 60)
-        self.trading_interval_minutes = int(os.getenv("TRADING_INTERVALS_MINUTE") or 1)
+        self.trading_interval = int(os.getenv("TRADING_INTERVALS") or 1)
         self.slippage = int(os.getenv("SLIPPAGE") or 50)
 
         # DEFAULT FEE OF ROUGHLY $0.04 TODAY
